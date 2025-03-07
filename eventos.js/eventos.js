@@ -6,17 +6,15 @@ document.getElementsByClassName("form-ini").addEventListener("submit", function(
     if(usuarioIni === "" || usuarioIni.length() > 10){
         alert("No has introducido el usuario o este es mayor de 8 caracteres");
         event.preventDefault();
-    }
-    else if(emailIni === "" || emailIni.includes("@gmail.com") == false){
+    } else if(emailIni === "" || emailIni.includes("@gmail.com") == false){
         alert("No has introducido el email o este no acaba en @gmail.com");
         event.preventDefault();
-    }
-    else if(contrasenaIni === "" || contrasenaIni.length() < 8){
+    } else if(contrasenaIni === "" || contrasenaIni.length() < 8){
         alert("No has introducido la contraseña o esta tiene menos de 8 caracteres");
         event.preventDefault();
     }
 });
-
+    
 document.getElementsByClassName("form-reg").addEventListener("submit", function(event){
     let usuarioReg = String(document.getElementById("usu-ini-in").value);
     let emailReg = String(document.getElementById("email-ini-in").value);
@@ -26,20 +24,16 @@ document.getElementsByClassName("form-reg").addEventListener("submit", function(
     if(usuarioReg === "" || usuarioReg.length() > 10){
         alert("No has introducido el usuario o este es mayor de 8 caracteres");
         event.preventDefault();
-    }
-    else if(emailReg === "" || emailReg.includes("@gmail.com") == false){
+    } else if(emailReg === "" || emailReg.includes("@gmail.com") == false){
         alert("No has introducido el email o este no acaba en @gmail.com");
         event.preventDefault();
-    }
-    else if(contrasenaReg === "" || contrasenaReg.length() < 8){
+    } else if(contrasenaReg === "" || contrasenaReg.length() < 8){
         alert("No has introducido la contraseña o esta tiene menos de 8 caracteres");
         event.preventDefault();
-    }
-    else if(contrasenaConReg === "" || contrasenaConReg.length() < 8){
+    } else if(contrasenaConReg === "" || contrasenaConReg.length() < 8){
         alert("No has introducido la contraseña de confirmacion o esta tiene menos de 8 caracteres");
         event.preventDefault();
-    }
-    else if(contrasenaReg != contrasenaConReg){
+    } else if(contrasenaReg != contrasenaConReg){
         alert("La contraseña y la contraseña de confirmacion no coinciden");
         event.preventDefault();
     }
