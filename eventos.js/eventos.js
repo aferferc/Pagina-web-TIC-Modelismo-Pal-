@@ -74,7 +74,6 @@ let timerRGB = null;
 
 if (logo) {
     logo.addEventListener("mouseover", function() {
-        let index = 0; // Inicializa el índice
         timerRGB = setInterval(() => {
             for (let i = 0; i < colores.length; i++) { 
                 setTimeout(() => {
