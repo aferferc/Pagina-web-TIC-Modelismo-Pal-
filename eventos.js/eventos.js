@@ -1,4 +1,5 @@
 document.addEventListener("DOMContentLoaded", function () {
+
     const formIni = document.querySelector(".form-ini");
     if (formIni) {
         formIni.addEventListener("submit", function (event) {
@@ -12,7 +13,7 @@ document.addEventListener("DOMContentLoaded", function () {
                 contrasenaIni.toLowerCase() === "fallout"
             ) {
                 alert("¡Tienes un excelente gusto! Fallout es una obra maestra.");
-                event.preventDefault(); 
+                event.preenDefault(); 
                 return; 
             }
 
@@ -66,48 +67,6 @@ document.addEventListener("DOMContentLoaded", function () {
             }
         });
     }
-
-    const navLinks = document.querySelectorAll("nav a");
-    navLinks.forEach(link => {
-        link.addEventListener("mouseover", function() {
-            this.style.color = "red";
-        });
-        link.addEventListener("mouseout", function() {
-            this.style.color = "";
-        });
-    });
 });
 
-let logo = document.getElementsByClassName("logo")[0];
-let colores = ["red", "blue", "green", "yellow", "purple", "orange"];
-let timerRGB = null;
-
-if (logo) {
-    logo.addEventListener("mouseover", function() {
-        timerRGB = setInterval(() => {
-            for (let i = 0; i < colores.length; i++) { 
-                setTimeout(() => {
-                    let colorActual = colores[i];
-                    document.querySelectorAll(".boton-nav, summary, header").forEach(elemento => {
-                        elemento.style.color = colorActual;
-                    });
-                    document.querySelectorAll("hr").forEach(hr => {
-                        hr.style.borderColor = colorActual;
-                    });
-
-                }, i * 200); 
-            }
-        }, colores.length * 200);
-    });
-    logo.addEventListener("mouseout", function() {
-        clearInterval(timerRGB); 
-        intervalId = null; 
-        document.querySelectorAll(".boton-nav, summary, header").forEach(elemento => {
-            elemento.style.color = "#bf8a3d";
-        });
-        document.querySelectorAll("hr").forEach(hr => {
-            hr.style.borderColor = "#bf8a3d";
-        });
-    });
-}
 
