@@ -75,9 +75,6 @@ document.addEventListener("DOMContentLoaded", function () {
         link.addEventListener("mouseout", function() {
             this.style.color = "";
         });
-        link.addEventListener("click", function(event) {
-            alert(`Has hecho clic en ${this.textContent}`);
-        });
     });
 });
 
@@ -98,9 +95,9 @@ if (logo) {
                         hr.style.borderColor = colorActual;
                     });
 
-                }, i * 200); //acuerdate, esto eran ms
+                }, i * 200); 
             }
-        }, colores.length * 200); //acuerdate, esto eran ms
+        }, colores.length * 200);
     });
     logo.addEventListener("mouseout", function() {
         clearInterval(timerRGB); 
@@ -112,4 +109,5 @@ if (logo) {
             hr.style.borderColor = "#bf8a3d";
         });
     });
-};
+}
+
