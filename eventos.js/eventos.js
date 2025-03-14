@@ -66,6 +66,19 @@ document.addEventListener("DOMContentLoaded", function () {
             }
         });
     }
+
+    const navLinks = document.querySelectorAll("nav a");
+    navLinks.forEach(link => {
+        link.addEventListener("mouseover", function() {
+            this.style.color = "red";
+        });
+        link.addEventListener("mouseout", function() {
+            this.style.color = "";
+        });
+        link.addEventListener("click", function(event) {
+            alert(`Has hecho clic en ${this.textContent}`);
+        });
+    });
 });
 
 let logo = document.getElementsByClassName("logo")[0];
