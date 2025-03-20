@@ -67,16 +67,19 @@ document.addEventListener("DOMContentLoaded", function () {
         });
     }
 
-    const navLinks = document.querySelectorAll("nav a");
-    navLinks.forEach(link => {
-        link.addEventListener("mouseover", function() {
-            this.style.color = "red";
-        });
-        link.addEventListener("mouseout", function() {
-            this.style.color = "";
-        });
+   const navLinks = document.querySelectorAll("nav a");
+let i = 0; 
+while (i < navLinks.length) {
+    const link = navLinks[i]; 
+    link.addEventListener("mouseover", function() {
+        this.style.color = "red"; 
     });
-});
+    link.addEventListener("mouseout", function() {
+        this.style.color = "";
+    });
+    i++;
+}
+
 
 let logo = document.getElementsByClassName("logo")[0];
 let colores = ["red", "blue", "green", "yellow", "purple", "orange"];
