@@ -67,49 +67,54 @@ document.addEventListener("DOMContentLoaded", function () {
         });
     }
 
-   const navLinks = document.querySelectorAll("nav a");
-let i = 0; 
-while (i < navLinks.length) {
-    const link = navLinks[i]; 
-    link.addEventListener("mouseover", function() {
-        this.style.color = "red"; 
-    });
-    link.addEventListener("mouseout", function() {
-        this.style.color = "";
-    });
-    i++;
-}
+    const navLinks = document.querySelectorAll("nav a");
+    let i = 0; // Índice inicial para recorrer los enlaces
 
-
-let logo = document.getElementsByClassName("logo")[0];
-let colores = ["red", "blue", "green", "yellow", "purple", "orange"];
-let timerRGB = null;
-
-if (logo) {
-    logo.addEventListener("mouseover", function() {
-        timerRGB = setInterval(() => {
-            for (let i = 0; i < colores.length; i++) { 
-                setTimeout(() => {
-                    let colorActual = colores[i];
-                    document.querySelectorAll(".boton-nav, summary, header").forEach(elemento => {
-                        elemento.style.color = colorActual;
-                    });
-                    document.querySelectorAll("hr").forEach(hr => {
-                        hr.style.borderColor = colorActual;
-                    });
-
-                }, i * 200); //acuerdate, esto eran ms
-            }
-        }, colores.length * 200); //acuerdate, esto eran ms
-    });
-    logo.addEventListener("mouseout", function() {
-        clearInterval(timerRGB); 
-        intervalId = null; 
-        document.querySelectorAll(".boton-nav, summary, header").forEach(elemento => {
-            elemento.style.color = "#bf8a3d";
+    while (i < navLinks.length) {
+        const link = navLinks[i]; // Obtenemos el enlace actual usando el índice
+        
+        link.addEventListener("mouseover", function() {
+            this.style.color = "red"; // Cambia el color a rojo al pasar el ratón
         });
-        document.querySelectorAll("hr").forEach(hr => {
-            hr.style.borderColor = "#bf8a3d";
+        
+        link.addEventListener("mouseout", function() {
+            this.style.color = ""; // Restablece el color original al salir el ratón
         });
-    });
-};
+        
+        i++; // Incrementa el índice para pasar al siguiente enlace
+    }
+
+    const logo = document.getElementsByClassName("logo")[0];
+    const colores = ["red", "blue", "green", "yellow", "purple", "orange"];
+    let timerRGB = null;
+
+    if (logo) {
+        logo.addEventListener("mouseover", function() {
+            timerRGB = setInterval(() => {
+                for (let i = 0; i < colores.length; i++) { 
+                    setTimeout(() => {
+                        const colorActual = colores[i];
+                        document.querySelectorAll(".boton-nav, summary, header").forEach(elemento => {
+                            elemento.style.color = colorActual;
+                        });
+                        document.querySelectorAll("hr").forEach(hr => {
+                            hr.style.borderColor = colorActual;
+                        });
+
+                    }, i * 200); // Millisegundos entre colores
+                }
+            }, colores.length * 200); // Ciclo completo de colores
+        });
+
+        logo.addEventListener("mouseout", function() {
+            clearInterval(timerRGB); 
+            timerRGB = null; 
+            document.querySelectorAll(".boton-nav, summary, header").forEach(elemento => {
+                elemento.style.color = "#bf8a3d";
+            });
+            document.querySelectorAll("hr").forEach(hr => {
+                hr.style.borderColor = "#bf8a3d";
+            });
+        });
+    }
+});
