@@ -68,20 +68,20 @@ document.addEventListener("DOMContentLoaded", function () {
     }
 
     const navLinks = document.querySelectorAll("nav a");
-    let i = 0; // Índice inicial para recorrer los enlaces
+    let i = 0; // contador/indice recorrido
 
     while (i < navLinks.length) {
-        const link = navLinks[i]; // Obtenemos el enlace actual usando el índice
+        const link = navLinks[i]; // enlace actual usando el contador/indice anterior
         
         link.addEventListener("mouseover", function() {
-            this.style.color = "red"; // Cambia el color a rojo al pasar el ratón
+            this.style.color = "red"; // Cambiamos a rojo al pasar el ratón
         });
         
         link.addEventListener("mouseout", function() {
-            this.style.color = ""; // Restablece el color original al salir el ratón
+            this.style.color = ""; // volvemos al anterior si raton fuera
         });
         
-        i++; // Incrementa el índice para pasar al siguiente enlace
+        i++; // aumenta el contador/indice para pasar al siguiente enlace
     }
 
     const logo = document.getElementsByClassName("logo")[0];
