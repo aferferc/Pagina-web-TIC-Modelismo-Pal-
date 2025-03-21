@@ -83,7 +83,7 @@ document.addEventListener("DOMContentLoaded", function () {
         
         i++; // aumenta el contador/indice para pasar al siguiente enlace
     }
-
+// tararatararu
     const logo = document.getElementsByClassName("logo")[0];
     const colores = ["red", "blue", "green", "yellow", "purple", "orange"];
     let timerRGB = null;
